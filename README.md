@@ -166,7 +166,7 @@ git remote add gitlink https://gitlink.org.cn/xuxiaowei-com-cn/spring-boot-start
 
 ## 参考文档
 
-- [OAuth文档](https://gitee.com/api/v5/oauth_doc)
+- [实现登录第三方网站](https://open.dingtalk.com/document/orgapp-server/tutorial-obtaining-user-personal-information)
 
 ## 鸣谢
 
