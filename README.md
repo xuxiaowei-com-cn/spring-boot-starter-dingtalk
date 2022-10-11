@@ -151,7 +151,7 @@
 
 <details>
 <summary>点击展开</summary>
-git remote add dingtalk https://gitee.com/xuxiaowei-com-cn/spring-boot-starter-dingtalk.git
+git remote add gitee https://gitee.com/xuxiaowei-com-cn/spring-boot-starter-dingtalk.git
 
 git remote add gitlab https://gitlab.com/xuxiaowei-com-cn/spring-boot-starter-dingtalk.git
 
