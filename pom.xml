@@ -122,7 +122,6 @@
         <url>https://github.com/xuxiaowei-com-cn/spring-boot-starter-dingtalk</url>
         <connection>scm:git:https://git@github.com/xuxiaowei-com-cn/spring-boot-starter-dingtalk.git
         </connection>
-        <developerConnection>http://xuxiaowei.com.cn</developerConnection>
     </scm>
 
     <issueManagement>
