@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  org.springframework.security.oauth2.server.authorization.http.DingtalkAuthorizeHttpFilter,\
+  org.springframework.security.oauth2.server.authorization.http.DingtalkCodeHttpFilter,\
+  org.springframework.security.oauth2.server.authorization.config.annotation.web.configuration.OAuth2DingtalkConfiguration,\
+  org.springframework.security.oauth2.server.authorization.properties.DingtalkProperties
