@@ -109,7 +109,7 @@ public class OAuth2DingtalkAuthenticationProvider implements AuthenticationProvi
 		Set<String> requestedScopes = StringUtils.commaDelimitedListToSet(grantAuthenticationToken.getScope());
 
 		OAuth2ClientAuthenticationToken clientPrincipal = OAuth2AuthenticationProviderUtils
-				.getAuthenticatedClientElseThrowInvalidClient(grantAuthenticationToken);
+			.getAuthenticatedClientElseThrowInvalidClient(grantAuthenticationToken);
 		RegisteredClient registeredClient = clientPrincipal.getRegisteredClient();
 
 		// 自定义 钉钉 dingtalk 用户的IP与SessionId
