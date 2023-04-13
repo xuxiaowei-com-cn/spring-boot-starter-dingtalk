@@ -81,11 +81,11 @@
   </a>
 
   <a target="_blank" href="https://gitee.com/xuxiaowei-com-cn/spring-boot-starter-dingtalk">
-    <img alt="钉钉dingtalk stars" src="https://gitee.com/xuxiaowei-com-cn/spring-boot-starter-dingtalk/badge/star.svg?theme=blue">
+    <img alt="码云Gitee stars" src="https://gitee.com/xuxiaowei-com-cn/spring-boot-starter-dingtalk/badge/star.svg?theme=blue">
   </a>
 
   <a target="_blank" href="https://gitee.com/xuxiaowei-com-cn/spring-boot-starter-dingtalk">
-    <img alt="钉钉dingtalk forks" src="https://gitee.com/xuxiaowei-com-cn/spring-boot-starter-dingtalk/badge/fork.svg?theme=blue">
+    <img alt="码云Gitee forks" src="https://gitee.com/xuxiaowei-com-cn/spring-boot-starter-dingtalk/badge/fork.svg?theme=blue">
   </a>
 
   <a target="_blank" href="https://gitlab.com/xuxiaowei-com-cn/spring-boot-starter-dingtalk">
