@@ -134,11 +134,11 @@
 
 ## 流水线
 
-- 当前流水线：[极狐GitLab](https://jihulab.com/xuxiaowei-com-cn/spring-boot-starter-alipay-oplatform/-/pipelines)
+- 当前流水线：[极狐GitLab](https://jihulab.com/xuxiaowei-com-cn/spring-boot-starter-dingtalk/-/pipelines)
     - 国内版 GitLab，开源项目：不限制流水线使用时长
 - 历史流水线：
-    - [GitLab](https://gitlab.com/xuxiaowei-com-cn/spring-boot-starter-alipay-oplatform/-/pipelines)
-    - [GitCode](https://gitcode.net/xuxiaowei-com-cn/spring-boot-starter-alipay-oplatform/-/pipelines)
+    - [GitLab](https://gitlab.com/xuxiaowei-com-cn/spring-boot-starter-dingtalk/-/pipelines)
+    - [GitCode](https://gitcode.net/xuxiaowei-com-cn/spring-boot-starter-dingtalk/-/pipelines)
 
 ## 发布
 
