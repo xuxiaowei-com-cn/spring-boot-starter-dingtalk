@@ -45,6 +45,7 @@ import org.springframework.security.oauth2.core.OAuth2AccessToken;
 import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
 import org.springframework.security.oauth2.core.OAuth2Error;
 import org.springframework.security.oauth2.core.endpoint.OAuth2AccessTokenResponse;
+import org.springframework.security.oauth2.core.endpoint.OAuth2ParameterNames;
 import org.springframework.security.oauth2.core.http.converter.OAuth2AccessTokenResponseHttpMessageConverter;
 import org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2AuthorizationServerConfigurer;
 import org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2TokenEndpointConfigurer;
@@ -54,6 +55,8 @@ import org.springframework.security.oauth2.server.authorization.exception.Redire
 import org.springframework.security.oauth2.server.authorization.properties.DingtalkProperties;
 import org.springframework.security.oauth2.server.authorization.web.authentication.OAuth2DingtalkEndpointUtils;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.util.StringUtils;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriUtils;
@@ -62,10 +65,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 /**
  * 钉钉 dingtalk 账户服务接口 基于内存的实现
@@ -204,6 +204,8 @@ public class InMemoryDingtalkService implements DingtalkService {
 	 * 获取 OAuth 2.1 授权 Token（如果不想执行此方法后面的内容，可返回 null）
 	 * @param request 请求
 	 * @param response 响应
+	 * @param clientId 客户ID
+	 * @param clientSecret 客户凭证
 	 * @param tokenUrlPrefix 获取 Token URL 前缀
 	 * @param tokenUrl Token URL
 	 * @param uriVariables 参数
@@ -216,15 +218,18 @@ public class InMemoryDingtalkService implements DingtalkService {
 	@SuppressWarnings("AlibabaLowerCamelCaseVariableNaming")
 	@Override
 	public OAuth2AccessTokenResponse getOAuth2AccessTokenResponse(HttpServletRequest request,
-			HttpServletResponse response, String tokenUrlPrefix, String tokenUrl, Map<String, String> uriVariables)
-			throws OAuth2AuthenticationException {
+			HttpServletResponse response, String clientId, String clientSecret, String tokenUrlPrefix, String tokenUrl,
+			Map<String, String> uriVariables) throws OAuth2AuthenticationException {
 
 		HttpHeaders httpHeaders = new HttpHeaders();
-		httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-		HttpEntity<?> httpEntity = new HttpEntity<>(httpHeaders);
+		httpHeaders.setContentType(MediaType.MULTIPART_FORM_DATA);
 
+		MultiValueMap<String, String> multiValueMap = new LinkedMultiValueMap<>(8);
+		multiValueMap.put(OAuth2ParameterNames.CLIENT_ID, Collections.singletonList(clientId));
+		multiValueMap.put(OAuth2ParameterNames.CLIENT_SECRET, Collections.singletonList(clientSecret));
+
+		HttpEntity<MultiValueMap<String, String>> httpEntity = new HttpEntity<>(multiValueMap, httpHeaders);
 		RestTemplate restTemplate = new RestTemplate();
-
 		List<HttpMessageConverter<?>> messageConverters = restTemplate.getMessageConverters();
 		messageConverters.add(5, new OAuth2AccessTokenResponseHttpMessageConverter());
 
